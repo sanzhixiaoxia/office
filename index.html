@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title>三只小虾品牌咨询官方网站</title>
+		<link rel="stylesheet" type="text/css" href="ui/layui-v2.5.6/css/layui.css" />
+		<script src="ui/layui-v2.5.6/layui.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+
+	<body>
+		<div>
+			<ul class="layui-nav layui-bg-green">
+				<li class="layui-nav-item">
+					<a href="">墨绿导航</a>
+				</li>
+				<li class="layui-nav-item layui-this">
+					<a href="">产品</a>
+				</li>
+				<li class="layui-nav-item">
+					<a href="">大数据</a>
+				</li>
+				<li class="layui-nav-item">
+					<a href="javascript:;">解决方案</a>
+					<dl class="layui-nav-child">
+						<!-- 二级菜单 -->
+						<dd>
+							<a href="">移动模块</a>
+						</dd>
+						<dd>
+							<a href="">后台模版</a>
+						</dd>
+						<dd>
+							<a href="">电商平台</a>
+						</dd>
+					</dl>
+				</li>
+				<li class="layui-nav-item">
+					<a href="">社区</a>
+				</li>
+				<li class="layui-nav-item">
+					<a href="">关于我们</a>
+				</li>
+				<!--<span class="layui-nav-bar" style="left: 20px; top: 55px; width: 0px; opacity: 0;"></span></ul>-->
+
+		</div><br />
+		<div class="layui-container">
+			<div style="text-align: center;" <div class="layui-carousel" id="test10">
+				<div carousel-item="">
+					<div><img src="img/1.png"></div>
+					<div><img src="img/2.png"></div>
+					<div><img src="img/3.png"></div>
+					<div><img src="img/4.png"></div>
+					<div><img src="img/5.png"></div>
+					<div><img src="img/6.png"></div>
+				</div>
+			</div>
+		</div>
+		<br />
+		<div id="">
+			<fieldset class="layui-elem-field layui-field-title site-title">
+				<legend>
+					<a name="nav-theme">导航主题</a>
+				</legend>
+			</fieldset>
+		</div>
+	</body>
+	<script type="text/javascript">
+		//注意：导航 依赖 element 模块，否则无法进行功能性操作
+		layui.use(['carousel', 'form', 'element'], function() {
+			var carousel = layui.carousel,
+				form = layui.form;
+
+			//图片轮播
+			carousel.render({
+				elem: '#test10',
+				width: '778px',
+				height: '440px',
+				interval: 5000
+			});
+		});
+	</script>
+
+</html>
