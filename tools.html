@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>常用账号生成工具</title>
+		<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="https://www.jq22.com/demo/jqueryToast201708310012/js/toast.script.js" type="text/javascript" charset="utf-8"></script>
+		<link rel="stylesheet" type="text/css" href="https://www.jq22.com/demo/jqueryToast201708310012/css/toast.style.css" />
+	</head>
+
+	<body>
+		<div style="float: left;width: 45%;">
+			<table style="width: auto;text-align: left;">
+				<tr>
+					<th style="width: 5%;">序号</th>
+					<th style="width: 25%;">名称</th>
+					<th style="width: 25%;">生成数据</th>
+					<th style="width: 30%;">操作</th>
+				</tr>
+				<tr>
+					<td>1</td>
+					<td><span>名字</span></td>
+					<td><input id="name" type="text" placeholder="随机姓名.."></td>
+					<td>
+						<input id="generateName" type="button" value="生成"> &nbsp;&nbsp;
+						<input type="button" onclick="copyData(this)" value="拷贝" />
+					</td>
+				</tr>
+				<tr>
+					<td>2</td>
+					<td><span>手机号</span></td>
+					<td><input id="idMoble" type="text" placeholder="随机手机号.."></td>
+					<td>
+						<input onclick="fungetMoble()" type="button" value="生成"> &nbsp;&nbsp;
+						<input type="button" onclick="copyData(this)" value="拷贝" />
+					</td>
+				</tr>
+				<tr>
+					<td>3</td>
+					<td><span>身份证号码</span></td>
+					<td><input id="identity" type="text" placeholder="随机身份证号码.."></td>
+					<td>
+						<input id="generateIdentity" type="button" value="生成"> &nbsp;&nbsp;
+						<input type="button" onclick="copyData(this)" value="拷贝" />
+					</td>
+				</tr>
+				<tr>
+					<td>4</td>
+					<td>
+						<select name="bank_no" id="">
+							<option value="100">邮政储蓄</option>
+							<option value="102">工商银行</option>
+							<option value="103">农业银行</option>
+							<option value="104">中国银行</option>
+							<option value="105">建设银行</option>
+							<option value="301">交通银行</option>
+							<option value="302">中信银行</option>
+							<option value="303">光大银行</option>
+							<option value="304">华夏银行</option>
+							<option value="305">民生银行</option>
+							<option value="306">广发银行</option>
+							<option value="309">兴业银行</option>
+							<option value="308">招商银行</option>
+							<option value="310">浦发银行</option>
+							<option value="315">平安银行</option>
+							<option value="316">上海银行</option>
+						</select>
+					</td>
+					<td><input id="bankcard" type="text" placeholder="银行卡号"></td>
+					<td>
+						<input id="generateBankcard" type="button" value="生成"> &nbsp;&nbsp;
+						<input type="button" onclick="copyData(this)" value="拷贝" />
+					</td>
+				</tr>
+				<tr>
+					<td>5</td>
+					<td>生成位数：<input type="text" id="mathRandomText" value="26" style="width: 20px;" /></td>
+					<td><input id="mathRandomVal" type="text" placeholder="随机数字"></td>
+					<td>
+						<input type="button" onclick="mathRandomBtn()" value="生成" /> &nbsp;&nbsp;
+						<input type="button" onclick="copyData(this)" value="拷贝" />
+					</td>
+				</tr>
+			</table>
+
+		</div>
+		<div style="float: left;width: 45%;">
+			<textarea style="margin: 0px; width: 599px; height: 310px;" wrap="physical">
+//信息采集告知书
+$(".no").prop("checked","checked");
+
+//输入银行卡号				
+$("#bankCardNo").val("6216619569495569785");
+$("#bankCardNoCK").val("6216619569495569785");
+
+//阅读协议
+window.setInterval(function(){
+	if($("#readOk").length>0){
+		$("#readOk").prop("checked", "checked");
+		fnread();
+	}
+},1000);
+	
+//跳过手机验证码：
+Replace('experience.html?idcardId=7bd35b68a9bc4770bd8753797d451ca5&tasktype=DF');
+			</textarea>
+		</div>
+		<div style="clear: both;"></div>
+		<br />
+		<br />
+		<div style="float: left;width: 45%;">
+			浏览器编解码：
+			<input type="button" name="" onclick="encodeURIComponentBtn()" value="编码encodeURIComponent(url)" />
+			<input type="button" name="" onclick="decodeURIComponentBtn()" value="解码decodeURIComponent(url)" />
+			<br>
+			<textarea id="codeText" style="margin: 0px; width: 599px; height: 170px;"></textarea>
+			<script type="text/javascript">
+				function encodeURIComponentBtn() {
+					$("#codeText").val(encodeURIComponent($("#codeText").val()));
+				}
+
+				function decodeURIComponentBtn() {
+					$("#codeText").val(decodeURIComponent($("#codeText").val()));
+				}
+			</script>
+		</div>
+
+		<div style="float: left;width: 45%;">
+			浏览器编解码：
+			<input type="button" name="" onclick="encodeBtn()" value="编码encodeURI(url)" />
+			<input type="button" name="" onclick="decodeBtn()" value="解码decodeURI(url)" />
+			<br>
+			<textarea id="codeText2" style="margin: 0px; width: 599px; height: 170px;"></textarea>
+			<script type="text/javascript">
+				function encodeBtn() {
+					$("#codeText2").val(encodeURI($("#codeText2").val()));
+				}
+
+				function decodeBtn() {
+					$("#codeText2").val(decodeURI($("#codeText2").val()));
+				}
+			</script>
+		</div>
+
+		<div style="clear: both;"></div>
+		<br />
+		<div style="float: left;width: 45%;height:380px; ">
+			Base64转图片：<input type="button" onclick="basestrBtn()" value="Base64转图片" /><br /><br />
+			<img id="prewimg" style="width: 300px;">
+			<textarea id="basestr" style="margin: 0px; width: 599px; height: 170px;">data:image/jpg;base64,</textarea>
+		</div>
+		<div style="float: left;width: 45%;height:380px; ">
+			图片转Base64：<input type="file"><br /><br />
+			<img id="outputImg" style="width: 300px;">
+			<textarea id="basetextarea" style="display: block; margin: 0px; width: 599px; height: 170px;"></textarea>
+		</div>
+
+		<div style="clear: both;"></div>
+
+		<script type="text/javascript">
+			function basestrBtn() {
+				var str = $("#basestr").val().trim();
+				if(str.indexOf("data:image/jpg;base64,") >= 0 || str.indexOf("data:image/jpeg;base64,") >= 0 || str.indexOf("data:image/gif;base64,") >= 0 || str.indexOf("data:image/bmp;base64,") >= 0 || str.indexOf("data:image/png;base64,") >= 0 || str.indexOf("data:image/ico;base64,") >= 0) {
+					$("#prewimg").attr("src", str);
+				} else {
+					alert("格式错误,暂时只支持.jpg/.jpeg/.gif/.bmp/.png/.ico格式");
+					$("#basestr").val("").focus();
+				}
+			}
+		</script>
+
+		<script type="text/javascript">
+			function run(input_file, get_data) {
+				/*input_file：文件按钮对象*/
+				/*get_data: 转换成功后执行的方法*/
+				if(typeof(FileReader) === 'undefined') {
+					alert("抱歉，你的浏览器不支持 FileReader，不能将图片转换为Base64，请使用现代浏览器操作！");
+				} else {
+					try {
+						/*图片转Base64 核心代码*/
+						var file = input_file.files[0];
+						//这里我们判断下类型如果不是图片就返回 去掉就可以上传任意文件
+						if(!/image\/\w+/.test(file.type)) {
+							alert("请确保文件为图像类型");
+							return false;
+						}
+						var reader = new FileReader();
+						reader.onload = function() {
+							get_data(this.result);
+						}
+						reader.readAsDataURL(file);
+					} catch(e) {
+						alert('图片转Base64出错啦！' + e.toString())
+					}
+				}
+			}
+			$(function() {
+				$("input").change(function() {
+					run(this, function(data) {
+						$('#outputImg').attr('src', data);
+						$('#basetextarea').val(data);
+					});
+				});
+			});
+		</script>
+	</body>
+	<script type="text/javascript">
+		//获取银行卡号不包括LunmCode
+		function getBankCardWithoutLunmCode(bank_no) {
+			// bank_no 银行代码
+			//控制位数. 19位的银行卡 cardinalNumber=12. 16位的银行卡 cardinalNumber=9
+			var cardinalNumber = 12;
+			var prefix = "";
+			switch(bank_no) {
+				case "100":
+					prefix = "622155";
+					break;
+				case "102":
+					prefix = "622202";
+					break;
+				case "103":
+					prefix = "622848";
+					break;
+				case "104":
+					prefix = "621661";
+					break;
+				case "105":
+					prefix = "622700";
+					break;
+				case "301":
+					prefix = "622262";
+					break;
+				case "302":
+					prefix = "622459";
+					break;
+				case "303":
+					prefix = "622666";
+					cardinalNumber = 9;
+					break;
+				case "304":
+					prefix = "622630";
+					break;
+				case "305":
+					prefix = "622622";
+					break;
+				case "306":
+					prefix = "622556";
+					break;
+				case "308":
+					prefix = "622588";
+					cardinalNumber = 9;
+					break;
+				case "309":
+					prefix = "622908";
+					break;
+				case "310":
+					prefix = "621717";
+					break;
+				case "315":
+					prefix = "622323";
+					break;
+				case "316":
+					prefix = "622309";
+					break;
+				default:
+					return '';
+			}
+
+			//生成不包括Luhm校验码的银行卡号
+			var bankCardWithoutLunmCode = prefix;
+			for(var j = 0; j < cardinalNumber; j++) {
+				bankCardWithoutLunmCode += Math.floor(Math.random() * 10);
+			}
+
+			console.log(prefix);
+			console.log(bankCardWithoutLunmCode);
+
+			return bankCardWithoutLunmCode;
+		}
+
+		// 获取Luhn Code
+		function getLuhnCode(bankCardWithoutLunmCode) {
+			if(bankCardWithoutLunmCode == '') return '';
+			var no = bankCardWithoutLunmCode.split('').reverse().join('');
+
+			// 定义奇数/偶数数据
+			var addArr = new Array();
+			var evenArr = new Array();
+
+			// 奇数/偶数数组分开
+			for(var i = 0; i < no.length; i++) {
+				if(i % 2 == 0) {
+					addArr[i / 2] = no[i];
+				} else {
+					evenArr[(i - 1) / 2] = no[i];
+				}
+			}
+
+			//奇数数组内容x2
+			// 如果乘以2得到的数字是两位,把这两位相加得到一位数字.
+			// 如果相加后的内容时两位数,减去9.
+			for(var i = 0; i < addArr.length; i++) {
+				var temp = parseInt(addArr[i]) * 2;
+				if(temp > 9) {
+					temp = parseInt(String(temp).charAt(0)) + parseInt(String(temp).charAt(1));
+					if(temp > 9) {
+						temp = temp - 9;
+					}
+				}
+				addArr[i] = temp;
+			}
+
+			//两个数组合并
+			var arr = addArr.concat(evenArr);
+			var oddEvenCount = 0;
+			for(var i = 0; i < arr.length; i++) {
+				oddEvenCount += parseInt(arr[i]);
+			}
+			console.log(oddEvenCount);
+			//生成Lnhn code
+			var LuhnCode = oddEvenCount % 10 == 0 ? 0 : (10 - oddEvenCount % 10);
+			console.log(LuhnCode);
+			return LuhnCode;
+		}
+
+		function getBankCard(bank_no) {
+			var bankCardWithoutLunmCode = getBankCardWithoutLunmCode(bank_no);
+			var bankCard = bankCardWithoutLunmCode + getLuhnCode(bankCardWithoutLunmCode) + "";
+			console.log("银行卡号:", bankCard);
+			return bankCard;
+		}
+		// 随机生成姓名
+		function getName() {
+			var familyNames = new Array(
+				"赵", "钱", "孙", "李", "周", "吴", "郑", "王", "冯", "陈", "褚", "卫", "蒋", "沈", "韩", "杨",
+				"朱", "秦", "尤", "许", "何", "吕", "施", "张", "孔", "曹", "严", "华", "金", "魏", "陶", "姜",
+				"戚", "谢", "邹", "喻", "柏", "水", "窦", "章", "云", "苏", "潘", "葛", "奚", "范", "彭", "郎",
+				"鲁", "韦", "昌", "马", "苗", "凤", "花", "方", "俞", "任", "袁", "柳", "酆", "鲍", "史", "唐",
+				"费", "廉", "岑", "薛", "雷", "贺", "倪", "汤", "滕", "殷", "罗", "毕", "郝", "邬", "安", "常",
+				"乐", "于", "时", "傅", "皮", "卞", "齐", "康", "伍", "余", "元", "卜", "顾", "孟", "平", "黄",
+				"和", "穆", "萧", "尹", "姚", "邵", "湛", "汪", "祁", "毛", "禹", "狄", "米", "贝", "明", "臧",
+				"计", "伏", "成", "戴", "谈", "宋", "茅", "庞", "熊", "纪", "舒", "屈", "项", "祝", "董", "梁",
+				"杜", "阮", "蓝", "闵", "席", "季", "麻", "强", "贾", "路", "娄", "危", "江", "童", "颜", "郭",
+				"梅", "盛", "林", "刁", "钟", "徐", "邱", "骆", "高", "夏", "蔡", "田", "樊", "胡", "凌", "霍",
+				"虞", "万", "支", "柯", "昝", "管", "卢", "莫", "经", "房", "裘", "缪", "干", "解", "应", "宗",
+				"丁", "宣", "贲", "邓", "郁", "单", "杭", "洪", "包", "诸", "左", "石", "崔", "吉", "钮", "龚",
+				"程", "嵇", "邢", "滑", "裴", "陆", "荣", "翁", "荀", "羊", "於", "惠", "甄", "曲", "家", "封",
+				"芮", "羿", "储", "靳", "汲", "邴", "糜", "松", "井", "段", "富", "巫", "乌", "焦", "巴", "弓",
+				"牧", "隗", "山", "谷", "车", "侯", "宓", "蓬", "全", "郗", "班", "仰", "秋", "仲", "伊", "宫",
+				"宁", "仇", "栾", "暴", "甘", "钭", "厉", "戎", "祖", "武", "符", "刘", "景", "詹", "束", "龙",
+				"叶", "幸", "司", "韶", "郜", "黎", "蓟", "薄", "印", "宿", "白", "怀", "蒲", "邰", "从", "鄂",
+				"索", "咸", "籍", "赖", "卓", "蔺", "屠", "蒙", "池", "乔", "阴", "鬱", "胥", "能", "苍", "双",
+				"闻", "莘", "党", "翟", "谭", "贡", "劳", "逄", "姬", "申", "扶", "堵", "冉", "宰", "郦", "雍",
+				"郤", "璩", "桑", "桂", "濮", "牛", "寿", "通", "边", "扈", "燕", "冀", "郏", "浦", "尚", "农",
+				"温", "别", "庄", "晏", "柴", "瞿", "阎", "充", "慕", "连", "茹", "习", "宦", "艾", "鱼", "容",
+				"向", "古", "易", "慎", "戈", "廖", "庾", "终", "暨", "居", "衡", "步", "都", "耿", "满", "弘",
+				"匡", "国", "文", "寇", "广", "禄", "阙", "东", "欧", "殳", "沃", "利", "蔚", "越", "夔", "隆",
+				"师", "巩", "厍", "聂", "晁", "勾", "敖", "融", "冷", "訾", "辛", "阚", "那", "简", "饶", "空",
+				"曾", "毋", "沙", "乜", "养", "鞠", "须", "丰", "巢", "关", "蒯", "相", "查", "后", "荆", "红",
+				"游", "竺", "权", "逯", "盖", "益", "桓", "公", "万", "俟", "司", "马", "上", "官", "欧", "阳",
+				"夏", "侯", "诸", "葛", "闻", "人", "东", "方", "赫", "连", "皇", "甫", "尉", "迟", "公", "羊",
+				"澹", "台", "公", "冶", "宗", "政", "濮", "阳", "淳", "于", "单", "于", "太", "叔", "申", "屠",
+				"公", "孙", "仲", "孙", "轩", "辕", "令", "狐", "钟", "离", "宇", "文", "长", "孙", "慕", "容",
+				"鲜", "于", "闾", "丘", "司", "徒", "司", "空", "丌", "官", "司", "寇", "仉", "督", "子", "车",
+				"颛", "孙", "端", "木", "巫", "马", "公", "西", "漆", "雕", "乐", "正", "壤", "驷", "公", "良",
+				"拓", "跋", "夹", "谷", "宰", "父", "谷", "梁", "晋", "楚", "闫", "法", "汝", "鄢", "涂", "钦",
+				"段", "干", "百", "里", "东", "郭", "南", "门", "呼", "延", "归", "海", "羊", "舌", "微", "生",
+				"岳", "帅", "缑", "亢", "况", "郈", "有", "琴", "梁", "丘", "左", "丘", "东", "门", "西", "门",
+				"商", "牟", "佘", "佴", "伯", "赏", "南", "宫", "墨", "哈", "谯", "笪", "年", "爱", "阳", "佟",
+				"第", "五", "言", "福", "百", "家", "姓", "终"
+
+			);
+			var givenNames = new Array(
+				"子璇", "子涵", "淼", "国栋", "夫子", "瑞堂", "甜", "敏", "尚", "国贤", "贺祥",
+				"昊轩", "易轩", "益辰", "益帆", "益冉", "瑾春", "瑾昆", "春齐", "杨", "文昊",
+				"东东", "雄霖", "浩晨", "熙涵", "溶溶", "冰枫", "欣欣", "宜豪", "欣慧", "建政",
+				"美欣", "淑慧", "文轩", "文杰", "欣源", "忠林", "榕润", "欣汝", "慧嘉", "新建",
+				"建林", "亦菲", "林", "冰洁", "佳欣", "涵涵", "禹辰", "淳美", "泽惠", "伟洋",
+				"涵越", "润丽", "翔", "淑华", "晶莹", "凌晶", "苒溪", "雨涵", "嘉怡", "佳毅",
+				"子辰", "佳琪", "紫轩", "瑞辰", "昕蕊", "萌", "明远", "欣宜", "泽远", "欣怡",
+				"佳怡", "佳惠", "晨茜", "晨璐", "运昊", "汝鑫", "淑君", "晶滢", "润莎", "榕汕",
+				"佳钰", "佳玉", "晓庆", "一鸣", "语晨", "添池", "添昊", "雨泽", "雅晗", "雅涵",
+				"清妍", "诗悦", "嘉乐", "晨涵", "天赫", "玥傲", "佳昊", "天昊", "萌萌", "晨涛",
+				"富贵", "抗美", "援朝", "前线", "坦克", "卫国", "为民", "上天", "入地", "若萌"
+			);
+			var i = parseInt(Math.random() * 100);
+			var familyName = familyNames[i];
+			var j = parseInt(Math.random() * 100);
+			var givenName = givenNames[i];
+			var name = familyName + givenName;
+			console.log("姓名", name);
+			return name;
+		}
+		// 生成随机身份证号
+		function getId_no() {
+			var coefficientArray = ["7", "9", "10", "5", "8", "4", "2", "1", "6", "3", "7", "9", "10", "5", "8", "4",
+				"2"
+			]; // 加权因子
+			var lastNumberArray = ["1", "0", "X", "9", "8", "7", "6", "5", "4", "3", "2"]; // 校验码
+			var address = "420101"; // 住址
+			var birthday = "19810101"; // 生日
+			var s = Math.floor(Math.random() * 10).toString() + Math.floor(Math.random() * 10).toString() + Math.floor(Math
+				.random() *
+				10).toString();
+			var array = (address + birthday + s).split("");
+			var total = 0;
+			for(i in array) {
+				total = total + parseInt(array[i]) * parseInt(coefficientArray[i]);
+			}
+			var lastNumber = lastNumberArray[parseInt(total % 11)];
+			var id_no_String = address + birthday + s + lastNumber;
+			console.log("身份证", id_no_String);
+			return id_no_String;
+		}
+		window.onload = function() {
+			// 获取select的选中项
+			var checkedBankNo = document.getElementsByName("bank_no")[0].value;
+			// 获取生成卡号的按钮
+			var generateBankcard = document.getElementById("generateBankcard");
+			generateBankcard.onclick = function() {
+				// 获取卡号文本框
+				var bankcard = document.getElementById("bankcard");
+				// 获取select的选中项
+				var checkedBankNo = document.getElementsByName("bank_no")[0].value;
+				bankcard.value = getBankCard(checkedBankNo);
+			}
+
+			// 生成身份证号码
+			var generateIdentity = document.getElementById("generateIdentity");
+
+			generateIdentity.onclick = function() {
+				var identity = document.getElementById("identity");
+				identity.value = getId_no();
+			}
+
+			// 生成随机姓名
+			var generateName = document.getElementById("generateName");
+
+			generateName.onclick = function() {
+				var name = document.getElementById("name");
+				name.value = getName();
+			}
+
+		}
+
+		function fungetMoble() {
+			var name = document.getElementById("idMoble");
+			name.value = getMoble();
+		}
+
+		/**
+		 * 随机生成手机号
+		 */
+		function getMoble() {
+			var prefixArray = new Array("130", "131", "132", "133", "135", "137", "138", "170", "187", "189");
+			var i = parseInt(10 * Math.random());
+			var prefix = prefixArray[i];
+			for(var j = 0; j < 8; j++) {
+				prefix = prefix + Math.floor(Math.random() * 10);
+			}
+			return prefix;
+		}
+
+		/**
+		 * 生成随机数
+		 */
+		function mathRandomBtn() {
+			//生成多少位数字
+			var digit = $("#mathRandomText").val();
+			if(digit == "" || isNaN(digit)) {
+				alert("请输入数字");
+			} else {
+				var sourceStr = "0,1,2,3,4,5,6,7,8,9";
+				arrStr = sourceStr.split(",");
+				var result = ""; //定义变量并初始化
+				var index = 0;
+				for(i = 0; i < digit; i++) {
+					index = parseInt(Math.random() * arrStr.length);
+					result += arrStr[index];
+				}
+				$("#mathRandomVal").val(result);
+			}
+		}
+
+		function copyData(item) {
+			// var cptext = $(item).parents("tr").children('td').eq(2).children('input').val();
+			var cptext = $(item).parents('tr').find('td:eq(2)>input').val();
+			copyToClipboard(cptext);
+		}
+
+		/**
+		 * 拷贝到粘贴板
+		 * @param {Object} element
+		 */
+		function copyToClipboard(element) {
+			var $temp = $("<input>");
+			$("body").append($temp);
+			$temp.val(element).select();
+			document.execCommand("copy");
+			$temp.remove();
+
+			addToast(element);
+		}
+
+		/**
+		 * 消息提示框 toast
+		 * @param {Object} msgText
+		 */
+		function addToast(msgText) {
+			$.Toast("拷贝完成", msgText, "success", {
+				stack: true,
+				has_icon: true,
+				has_close_btn: true,
+				fullscreen: false,
+				timeout: 3000,
+				sticky: false,
+				has_progress: true,
+				rtl: false,
+			});
+		}
+	</script>
+
+</html>
